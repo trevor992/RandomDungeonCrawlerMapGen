@@ -363,6 +363,8 @@ MonoBehaviour:
   - {fileID: 6780344741652326746, guid: 5ca568002286e4684bde9e37a96819c8, type: 3}
   entryRoom_4: {fileID: 8157959643222771257, guid: 17cae4ebdb6bd4f0cad1691f2016002b,
     type: 3}
+  rooms: []
+  boss: {fileID: 2797905588208297740, guid: 3fe66762d3f9e433fb9f4a7376e99c9a, type: 3}
 --- !u!4 &1018021738
 Transform:
   m_ObjectHideFlags: 0

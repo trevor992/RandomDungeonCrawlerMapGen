@@ -137,21 +137,16 @@ public class RoomSpawner : MonoBehaviour
     {
         if (other.CompareTag("RoomSpawnPoint") && openingIdentifier.Length < 4 && other.GetComponent<RoomSpawner>().openingIdentifier.Length == 1)
         {
-            //Debug.Log(" other's opening Identifier String: " + other.GetComponent<RoomSpawner>().openingIdentifier);
-            //Debug.Log("This opening Identifiers String:  " + openingIdentifier);
             if (!CheckForDupl(openingIdentifier, other.GetComponent<RoomSpawner>().openingIdentifier))
             {
                 openingIdentifier += other.GetComponent<RoomSpawner>().openingIdentifier;
                 openingIdentifier = SortString(openingIdentifier);
-                //Debug.Log(" other's opening Identifier String2: " + other.GetComponent<RoomSpawner>().openingIdentifier);
-                //Debug.Log("This opening Identifiers String2:  " + openingIdentifier);
             }
             Destroy(other.gameObject);
         }else if (other.CompareTag("Destroyer"))
         {
             Destroy(this.gameObject);
-        }
-        //spawned = true;
+        }    
     }
 
     private string SortString(string s)

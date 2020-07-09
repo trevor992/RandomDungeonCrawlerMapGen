@@ -58,23 +58,23 @@ public class RoomSpawner : MonoBehaviour
         if (spawned == false && roomCountObj.GetRoomCounter() <= numRooms) {
             if (openingDirection == 1)
             {       
-                rand = UnityEngine.Random.Range(0, templates.bottomRooms.Length);
-                Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.BottomRooms.Length);
+                Instantiate(templates.BottomRooms[rand], transform.position, templates.BottomRooms[rand].transform.rotation);
             }
             else if (openingDirection == 2)
             {
-                rand = UnityEngine.Random.Range(0, templates.topRooms.Length);
-                Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.TopRooms.Length);
+                Instantiate(templates.TopRooms[rand], transform.position, templates.TopRooms[rand].transform.rotation);
             }
             else if (openingDirection == 3)
             {
-                rand = UnityEngine.Random.Range(0, templates.leftRooms.Length);
-                Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.LeftRooms.Length);
+                Instantiate(templates.LeftRooms[rand], transform.position, templates.LeftRooms[rand].transform.rotation);
             }
             else if (openingDirection == 4)
             {
-                rand = UnityEngine.Random.Range(0, templates.rightRooms.Length);
-                Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.RightRooms.Length);
+                Instantiate(templates.RightRooms[rand], transform.position, templates.RightRooms[rand].transform.rotation);
             }
             spawned = true;
             roomCountObj.IncrementCounter();           
@@ -83,49 +83,49 @@ public class RoomSpawner : MonoBehaviour
             switch (openingIdentifier)
             {
                 case "B":
-                    Instantiate(templates.bottomRooms[0], transform.position, templates.bottomRooms[0].transform.rotation);
+                    Instantiate(templates.BottomRooms[0], transform.position, templates.BottomRooms[0].transform.rotation);
                     break;
                 case "L":
-                    Instantiate(templates.leftRooms[1], transform.position, templates.leftRooms[1].transform.rotation);
+                    Instantiate(templates.LeftRooms[1], transform.position, templates.LeftRooms[1].transform.rotation);
                     break;
                 case "R":
-                    Instantiate(templates.rightRooms[2], transform.position, templates.rightRooms[2].transform.rotation);
+                    Instantiate(templates.RightRooms[2], transform.position, templates.RightRooms[2].transform.rotation);
                     break;
                 case "T":
-                    Instantiate(templates.topRooms[0], transform.position, templates.topRooms[0].transform.rotation);
+                    Instantiate(templates.TopRooms[0], transform.position, templates.TopRooms[0].transform.rotation);
                     break;
                 case "BL":
-                    Instantiate(templates.bottomRooms[6], transform.position, templates.bottomRooms[6].transform.rotation);
+                    Instantiate(templates.BottomRooms[6], transform.position, templates.BottomRooms[6].transform.rotation);
                     break;
                 case "BR":
-                    Instantiate(templates.bottomRooms[7], transform.position, templates.bottomRooms[7].transform.rotation);
+                    Instantiate(templates.BottomRooms[7], transform.position, templates.BottomRooms[7].transform.rotation);
                     break;
                 case"BT":
-                    Instantiate(templates.bottomRooms[2], transform.position, templates.bottomRooms[2].transform.rotation);
+                    Instantiate(templates.BottomRooms[2], transform.position, templates.BottomRooms[2].transform.rotation);
                     break;
                 case "LR":
-                    Instantiate(templates.leftRooms[2], transform.position, templates.leftRooms[2].transform.rotation);
+                    Instantiate(templates.LeftRooms[2], transform.position, templates.LeftRooms[2].transform.rotation);
                     break;
                 case "LT":
-                    Instantiate(templates.leftRooms[7], transform.position, templates.leftRooms[7].transform.rotation);
+                    Instantiate(templates.LeftRooms[7], transform.position, templates.LeftRooms[7].transform.rotation);
                     break;
                 case "RT":
-                    Instantiate(templates.rightRooms[7], transform.position, templates.rightRooms[7].transform.rotation);
+                    Instantiate(templates.RightRooms[7], transform.position, templates.RightRooms[7].transform.rotation);
                     break;
                 case "BLR":
-                    Instantiate(templates.bottomRooms[1], transform.position, templates.bottomRooms[1].transform.rotation);
+                    Instantiate(templates.BottomRooms[1], transform.position, templates.BottomRooms[1].transform.rotation);
                     break;
                 case "BRT":
-                    Instantiate(templates.bottomRooms[5], transform.position, templates.bottomRooms[5].transform.rotation);
+                    Instantiate(templates.BottomRooms[5], transform.position, templates.BottomRooms[5].transform.rotation);
                     break;
                 case "LRT":
-                    Instantiate(templates.leftRooms[5], transform.position, templates.leftRooms[5].transform.rotation);
+                    Instantiate(templates.LeftRooms[5], transform.position, templates.LeftRooms[5].transform.rotation);
                     break;
                 case "BLT":
-                    Instantiate(templates.bottomRooms[3], transform.position, templates.bottomRooms[3].transform.rotation);
+                    Instantiate(templates.BottomRooms[3], transform.position, templates.BottomRooms[3].transform.rotation);
                     break;
                 case "BLRT":
-                    Instantiate(templates.leftRooms[4], transform.position, templates.leftRooms[4].transform.rotation);
+                    Instantiate(templates.LeftRooms[4], transform.position, templates.LeftRooms[4].transform.rotation);
                     break;            
             }
             spawned = true;
@@ -169,23 +169,23 @@ public class RoomSpawner : MonoBehaviour
         {
             if (openingDirection == 1)
             {
-                rand = UnityEngine.Random.Range(0, templates.bottomRooms_2.Length);
-                Instantiate(templates.bottomRooms_2[rand], transform.position, templates.bottomRooms_2[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.BottomRooms_2.Length);
+                Instantiate(templates.BottomRooms_2[rand], transform.position, templates.BottomRooms_2[rand].transform.rotation);
             }
             else if (openingDirection == 2)
             {
-                rand = UnityEngine.Random.Range(0, templates.topRooms_2.Length);
-                Instantiate(templates.topRooms_2[rand], transform.position, templates.topRooms_2[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.TopRooms_2.Length);
+                Instantiate(templates.TopRooms_2[rand], transform.position, templates.TopRooms_2[rand].transform.rotation);
             }
             else if (openingDirection == 3)
             {
-                rand = UnityEngine.Random.Range(0, templates.leftRooms_2.Length);
-                Instantiate(templates.leftRooms_2[rand], transform.position, templates.leftRooms_2[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.LeftRooms_2.Length);
+                Instantiate(templates.LeftRooms_2[rand], transform.position, templates.LeftRooms_2[rand].transform.rotation);
             }
             else if (openingDirection == 4)
             {
-                rand = UnityEngine.Random.Range(0, templates.rightRooms_2.Length);
-                Instantiate(templates.rightRooms_2[rand], transform.position, templates.rightRooms_2[rand].transform.rotation);
+                rand = UnityEngine.Random.Range(0, templates.RightRooms_2.Length);
+                Instantiate(templates.RightRooms_2[rand], transform.position, templates.RightRooms_2[rand].transform.rotation);
             }
             spawned = true;
             roomCountObj.IncrementCounter();

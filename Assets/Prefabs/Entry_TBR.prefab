@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &5457413673964481087
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &5777886513963343236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1012,7 @@ GameObject:
   - component: {fileID: -6050097514293084061}
   m_Layer: 0
   m_Name: Entry_TBR
-  m_TagString: Untagged
+  m_TagString: Entry3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2871,6 +2873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &8615629041206385965
 GameObject:
   m_ObjectHideFlags: 0

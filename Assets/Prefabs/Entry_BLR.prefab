@@ -1309,6 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &3005430719284389217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &3005430719425319936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +1985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &3005430719716027057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,7 +2241,7 @@ GameObject:
   - component: {fileID: -2852924743924111239}
   m_Layer: 0
   m_Name: Entry_BLR
-  m_TagString: Untagged
+  m_TagString: Entry3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

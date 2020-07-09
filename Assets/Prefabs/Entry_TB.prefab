@@ -1711,7 +1711,7 @@ GameObject:
   - component: {fileID: -4889322199167986004}
   m_Layer: 0
   m_Name: Entry_TB
-  m_TagString: Untagged
+  m_TagString: Entry2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2035,6 +2035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &9044014339025811507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &9044014339475456968
 GameObject:
   m_ObjectHideFlags: 0

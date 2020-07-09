@@ -17,23 +17,23 @@ public class EntryRoomSpawner : MonoBehaviour
         entryRoomType = Random.Range(1, 5);
         if(entryRoomType == 1)
         {
-            rand = Random.Range(0, templates.entryRooms_1.Length);
-            Instantiate(templates.entryRooms_1[rand], transform.position, templates.entryRooms_1[rand].transform.rotation);
+            rand = Random.Range(0, templates.EntryRooms_1.Length);
+            Instantiate(templates.EntryRooms_1[rand], transform.position, templates.EntryRooms_1[rand].transform.rotation);
         }
         else if(entryRoomType == 2)
         {
-            rand = Random.Range(0, templates.entryRooms_2.Length);
-            Instantiate(templates.entryRooms_2[rand], transform.position, templates.entryRooms_2[rand].transform.rotation);
+            rand = Random.Range(0, templates.EntryRooms_2.Length);
+            Instantiate(templates.EntryRooms_2[rand], transform.position, templates.EntryRooms_2[rand].transform.rotation);
 
         }
         else if(entryRoomType == 3)
         {
-            rand = Random.Range(0, templates.entryRooms_3.Length);
-            Instantiate(templates.entryRooms_3[rand], transform.position, templates.entryRooms_3[rand].transform.rotation);
+            rand = Random.Range(0, templates.EntryRooms_3.Length);
+            Instantiate(templates.EntryRooms_3[rand], transform.position, templates.EntryRooms_3[rand].transform.rotation);
         }
         else if(entryRoomType == 4)
         {
-            Instantiate(templates.entryRoom_4, transform.position, templates.entryRoom_4.transform.rotation);
+            Instantiate(templates.EntryRoom_4, transform.position, templates.EntryRoom_4.transform.rotation);
         }
     }
 

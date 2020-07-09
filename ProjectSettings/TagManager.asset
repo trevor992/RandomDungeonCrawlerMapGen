@@ -10,6 +10,7 @@ TagManager:
   - EntrySpawner
   - Counter
   - EntrySpawn_1
+  - BRoom
   layers:
   - Default
   - TransparentFX

@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &6234827266085275077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &8794178935013729101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,7 +2387,7 @@ GameObject:
   - component: {fileID: 3438336418812873550}
   m_Layer: 0
   m_Name: Room_BR
-  m_TagString: Untagged
+  m_TagString: BR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

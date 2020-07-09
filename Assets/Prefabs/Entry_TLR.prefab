@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &6780344739987405683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   openingIdentifier: 
+  spawned: 0
 --- !u!1 &6780344740972070090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,7 +2306,7 @@ GameObject:
   - component: {fileID: -8756490782354164855}
   m_Layer: 0
   m_Name: Entry_TLR
-  m_TagString: Untagged
+  m_TagString: Entry3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2950,3 +2952,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   openingIdentifier: 
+  spawned: 0

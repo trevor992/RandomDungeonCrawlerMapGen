@@ -1,6 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using System.Linq;
+using System;
+using System.IO;
 
 public class RoomTemplates : MonoBehaviour
 {
@@ -9,7 +12,7 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] TopRooms { get; private set; }
     public GameObject[] LeftRooms { get; private set; }
     public GameObject[] RightRooms { get; private set; }
-    
+    public GameObject[] AllRooms { get; private set; }
     //Long Rooms with one ExIT/Entrance
     public GameObject[] LongRooms { get; private set; }
     //Rooms with two or more exits for when entry has only one exit
@@ -21,47 +24,66 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] EntryRooms_1 { get; private set; }
     public GameObject[] EntryRooms_2 { get; private set; }
     public GameObject[] EntryRooms_3 { get; private set; }
- 
-    public GameObject EntryRoom_4 { get; private set; } // obviously only one room has 4 exits no need for an array...
+    
+    public GameObject EntryRoom_4 { get;private set; } // obviously only one room has 4 exits no need for an array...
 
     public List<GameObject> rooms;
 
     private bool spawnedBoss;
     public GameObject boss;
 
-
+    /*
+     * As I add more roooms, different sizes different shapes etc. it becomes
+     * more and more apparent that I should  refactor this and build a Room
+     * class to increase modularity and decrease redundancy. 
+     */
     private void Awake()
     {
-        List<GameObject> roomList = new List<GameObject>();
-        List<GameObject> room_2List = new List<GameObject>();
-        GameObject[][] tempJagged = new GameObject[2][];
+        // This will create problems on windows machines!
+        string roomPath = "Prefabs/Room_Prefabs";
+        string entryRoomsPath = "Prefabs/Entry_Prefabs";
 
 
+        // need to be mindful when using LoadAll it could potentially
+        // load large amount of assets into Main Memory for this small project
+        // However for this project the approach works fine
+        //Furthermore I have used 
+        AllRooms = Resources.LoadAll(roomPath).Cast<GameObject>().ToArray();
+        GameObject[] entryRooms = Resources.LoadAll(entryRoomsPath).Cast<GameObject>().ToArray();
 
-        string[] roomPrefix = { "B", "BR","BL", "BLR", "TLR","TBLR", "TB","TBL", "T",
-            "TBR", "TR", "TL", "L", "R", "LR" };
+        BottomRooms = FilterObjects(g => g.tag.IndexOf("B") > -1, AllRooms);
+
+        TopRooms = FilterObjects(g => g.tag.IndexOf("T") > -1, AllRooms);
+
+        LeftRooms = FilterObjects(g => g.tag.IndexOf("L") > -1, AllRooms);
+
+        RightRooms = FilterObjects(g => g.tag.IndexOf("R") > -1, AllRooms);
+
+        //creating rooms with two or more     
+        BottomRooms_2 = FilterObjects(g => g.tag.Length >= 2 && g.tag.IndexOf("B") > -1, AllRooms);
+
+    
+        TopRooms_2 = FilterObjects(g => g.tag.Length >= 2 && g.tag.IndexOf("T") > -1, AllRooms);
+
+        LeftRooms_2 = FilterObjects(g => g.tag.Length >= 2 && g.tag.IndexOf("L") > -1, AllRooms);
+  
+        RightRooms_2 = FilterObjects(g => g.tag.Length >= 2 && g.tag.IndexOf("R") > -1, AllRooms);
 
 
-        tempJagged = AttacheGameObjects(roomList,room_2List ,roomPrefix, "B");
-        BottomRooms = tempJagged[0];
-        BottomRooms_2 = tempJagged[1];
+        EntryRooms_1 = FilterObjects(g => g.CompareTag("Entry1"), entryRooms);
 
-        tempJagged = AttacheGameObjects(roomList, room_2List, roomPrefix, "T");
-        TopRooms = tempJagged[0];
-        TopRooms_2 = tempJagged[1];
 
-        tempJagged = AttacheGameObjects(roomList, room_2List, roomPrefix, "L");
-        LeftRooms = tempJagged[0];
-        LeftRooms_2 = tempJagged[1];
+        EntryRooms_2 = FilterObjects(g => g.CompareTag("Entry2"), entryRooms);
 
-        tempJagged = AttacheGameObjects(roomList, room_2List, roomPrefix, "R");
-        RightRooms = tempJagged[0];
-        RightRooms_2 = tempJagged[1];
+        EntryRooms_3 = FilterObjects(g => g.CompareTag("Entry3"), entryRooms);
 
-        EntryRooms_1 = GameObject.FindGameObjectsWithTag("Entry1");
-        EntryRooms_2 = GameObject.FindGameObjectsWithTag("Entry2");
-        EntryRooms_3 = GameObject.FindGameObjectsWithTag("Entry3");
-        EntryRoom_4 = GameObject.FindGameObjectWithTag("Entry4");
+        for (int i = 0; i < entryRooms.Length; i++)
+        {
+            if (entryRooms[i].CompareTag("Entry4"))
+            {
+                EntryRoom_4 = entryRooms[i];
+            }
+        }      
 
 
 
@@ -82,27 +104,21 @@ public class RoomTemplates : MonoBehaviour
         }
     }
 
-    private GameObject[][] AttacheGameObjects(List<GameObject> tempList, List<GameObject> tempList_2,string[] roomPrefixes, string prefixToFind)
+
+    private GameObject[] FilterObjects(Func< GameObject,bool> filterFunc, GameObject[] listToBeFiltered)
     {
-        GameObject[][] result = new GameObject[2][];
+        List<GameObject> filteredList = new List<GameObject>();
 
-        for (int i = 0; i < roomPrefixes.Length; i++)
+        for (int i = 0; i < listToBeFiltered.Length; i++)
         {
-            if (roomPrefixes[i].IndexOf(prefixToFind) > -1)
+            if (filterFunc(listToBeFiltered[i]))
             {
-                tempList.Add(GameObject.FindGameObjectWithTag(roomPrefixes[i]));
-
-            }
-            if (roomPrefixes[i].Length > 1)
-            {
-                tempList_2.Add(GameObject.FindGameObjectWithTag(roomPrefixes[i]));
+                filteredList.Add(listToBeFiltered[i]);
             }
         }
-        
-        result[0] = new GameObject[tempList.Count];
-        result[1] = new GameObject[tempList_2.Count];
-        result[0] = tempList.ToArray();
-        result[1] = tempList_2.ToArray();
-        return result;
+        return filteredList.ToArray();
     }
+
+
 }
+

@@ -10,7 +10,25 @@ TagManager:
   - EntrySpawner
   - Counter
   - EntrySpawn_1
-  - BRoom
+  - Entry1
+  - Entry2
+  - Entry3
+  - Entry4
+  - B
+  - BL
+  - BLR
+  - BR
+  - L
+  - LR
+  - R
+  - T
+  - BT
+  - BLT
+  - BLRT
+  - BRT
+  - LT
+  - LRT
+  - RT
   layers:
   - Default
   - TransparentFX

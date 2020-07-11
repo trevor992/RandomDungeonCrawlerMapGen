@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AddRoom : MonoBehaviour
 {
@@ -13,9 +11,4 @@ public class AddRoom : MonoBehaviour
         templates.rooms.Add(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -20,6 +20,6 @@ public class RoomCounter : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(roomCounter);
+        //Debug.Log(roomCounter);
     }
 }

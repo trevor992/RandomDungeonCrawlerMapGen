@@ -996,7 +996,7 @@ GameObject:
   - component: {fileID: 372343882509434671}
   m_Layer: 0
   m_Name: Room_TBL
-  m_TagString: TBL
+  m_TagString: BLT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

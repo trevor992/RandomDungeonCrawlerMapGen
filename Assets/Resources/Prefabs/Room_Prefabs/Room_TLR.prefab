@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: -2298325980763457281}
   m_Layer: 0
   m_Name: Room_TLR
-  m_TagString: TLR
+  m_TagString: LRT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
